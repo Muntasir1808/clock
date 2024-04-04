@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 5rem auto;
+            height: 500px;
+            width: 500px;
+            font-family: 'josefin sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* float: left; */
+        }
+
+        .clock {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgb(86, 81, 81);
+            border-radius: 50%;
+            background: white;
+        }
+
+        /* minute hand */
+        .clock::before {
+            position: absolute;
+            content: '';
+            height: 102px;
+            width: 2px;
+            background: rgb(219, 9, 9);
+            /* for defining the center */
+            top: 50%;
+            left: calc(50% - 5px);
+            animation: orbit 9.5s linear infinite;
+            /* defines the location origin of the transform */
+            transform-origin: top;
+        }
+        /* hour hand */
+        .clock::after {
+            position: absolute;
+            content: '';
+            height: 80px;
+            width: 2px;
+            background: rgb(69, 84, 201);
+            /* for defining the center */
+            top: 50%;
+            left: calc(50% - 5px);
+            animation: orbit 76s linear infinite;
+            /* defines the location origin of the transform */
+            transform-origin: top; 
+        }
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .clock li {
+            list-style: none;
+            position: absolute;
+        }
+        .numbers {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            padding: 5%;
+            text-align: center;
+        }
+        .numbers span {
+            display: block;
+            color: black;
+            font-size: 38px;
+        }
+        .numbers:nth-child(1) {
+            transform: rotate(30deg);
+        }
+        .numbers:nth-child(1) span {
+            transform: rotate(-30deg);
+        }
+        .numbers:nth-child(2) {
+            transform: rotate(60deg);
+        }
+        .numbers:nth-child(2) span {
+            transform: rotate(-60deg);
+        }
+        .numbers:nth-child(3) {
+            transform: rotate(90deg);
+        }
+        .numbers:nth-child(3) span {
+            transform: rotate(-90deg);
+        }
+        .numbers:nth-child(4) {
+            transform: rotate(120deg);
+        }
+        .numbers:nth-child(4) span {
+            transform: rotate(-120deg);
+        }
+        .numbers:nth-child(5) {
+            transform: rotate(150deg);
+        }
+        .numbers:nth-child(5) span {
+            transform: rotate(-150deg);
+        }
+        .numbers:nth-child(6) {
+            transform: rotate(180deg);
+        }
+        .numbers:nth-child(6) span {
+            transform: rotate(-180deg);
+        }
+        .numbers:nth-child(7) {
+            transform: rotate(210deg);
+        }
+        .numbers:nth-child(7) span {
+            transform: rotate(-210deg);
+        }
+        .numbers:nth-child(8) {
+            transform: rotate(240deg);
+        }
+        .numbers:nth-child(8) span {
+            transform: rotate(-240deg);
+        }
+        .numbers:nth-child(9) {
+            transform: rotate(270deg);
+        }
+        .numbers:nth-child(9) span {
+            transform: rotate(-270deg);
+        }
+        .numbers:nth-child(10) {
+            transform: rotate(300deg);
+        }
+        .numbers:nth-child(10) span {
+            transform: rotate(-300deg);
+        }
+        .numbers:nth-child(11) {
+            transform: rotate(330deg);
+        }
+        .numbers:nth-child(11) span {
+            transform: rotate(-330deg);
+        }
+        .numbers:nth-child(12) {
+            transform: rotate(360deg);
+        }
+        .numbers:nth-child(12) span {
+            transform: rotate(-360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+            <li class="numbers"><span>1</span></li>
+            <li class="numbers"><span>2</span></li>
+            <li class="numbers"><span>3</span></li>
+            <li class="numbers"><span>4</span></li>
+            <li class="numbers"><span>5</span></li>
+            <li class="numbers"><span>6</span></li>
+            <li class="numbers"><span>7</span></li>
+            <li class="numbers"><span>8</span></li>
+            <li class="numbers"><span>9</span></li>
+            <li class="numbers"><span>10</span></li>
+            <li class="numbers"><span>11</span></li>
+            <li class="numbers"><span>12</span></li>
+        </div>
+    </div>
+    
+</body>
+</html>
